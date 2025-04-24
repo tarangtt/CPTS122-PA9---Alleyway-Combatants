@@ -21,3 +21,5 @@ using std::to_string; //for the time stuff
 
 #define SCREEN_HEIGHT 720 
 #define SCREEN_WIDTH  1280
+
+enum GameState {MainMenu, CharSelect, InGame, Paused, Gameover};
