@@ -3,7 +3,7 @@
 
 //only works in debug mode for some reason
 
-int main()
+int main(void)
 {
     sf::RenderWindow window(sf::VideoMode({ SCREEN_WIDTH , SCREEN_HEIGHT }), "SFML works!");
     sf::CircleShape shape(100.f);
