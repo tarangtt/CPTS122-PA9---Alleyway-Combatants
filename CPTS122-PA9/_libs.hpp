@@ -3,8 +3,20 @@
 #include <iostream>
 #include <string>
 
+//SMFL libs
+#include <SFML/Graphics.hpp>
+
+//typedefs
 typedef unsigned int uint;
 
+//constants
+#define SCREEN_HEIGHT 720 
+#define SCREEN_WIDTH  1280
+
+enum GameState {MainMenu, CharSelect, InGame, Paused, Gameover};
+
+
+//using -- 
 using std::cin; // cin >> 
 using std::cout; // cout <<
 using std::endl;
@@ -13,15 +25,8 @@ using std::cerr; //error output
 using std::string;
 using std::to_string; //for the time stuff
 
-#define SCREEN_HEIGHT 720 
-#define SCREEN_WIDTH  1280
 
-
-//SMFL libs
-#include <SFML/Graphics.hpp>
-
-
-
+//text colors 
 #define RST "\033[0;0m"
 #define RED "\033[0;31m"
 #define GRN "\033[0;32m"
