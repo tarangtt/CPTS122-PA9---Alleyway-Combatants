@@ -23,5 +23,8 @@
     <ClInclude Include="_libs.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="basePlayer.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
