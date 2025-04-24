@@ -1,10 +1,11 @@
+#include "_libs.hpp"
 #include <SFML/Graphics.hpp>
 
 //only works in debug mode for some reason
 
 int main()
 {
-    sf::RenderWindow window(sf::VideoMode({ 200, 200 }), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode({ SCREEN_WIDTH , SCREEN_HEIGHT }), "SFML works!");
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
