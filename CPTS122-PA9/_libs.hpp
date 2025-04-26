@@ -21,6 +21,7 @@ typedef struct spritePack
 //constants
 #define SCREEN_HEIGHT 720 
 #define SCREEN_WIDTH  1280
+#define GROUND_LEVEL 650.0
 
 enum GameState {mainmenu, charselect, ingame, paused, gameover};
 
