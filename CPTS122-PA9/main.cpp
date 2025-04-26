@@ -19,6 +19,7 @@ int main(void)
             if (event->is<sf::Event::Closed>())
                 window.close();
             else
+
                 switch (current) {
                 case MainMenu:
                     
