@@ -34,13 +34,16 @@ protected:
 	
 	//===Sprites===
 	sprites  characterWalk1, characterWalk2, characterBlock, characterJump;
-	sprites  characterHighAttackLaunch, characterHighAttackCharge;
-	sprites  characterLowAttackLaunch, characterLowAttackCharge;
+	sprites  characterHighAttackLaunch, characterHighAttackCharge; //punch
+	sprites  characterLowAttackLaunch, characterLowAttackCharge; // kick
 	
 
 
 public:
-	
+	void draw()
+	{
+
+	}
 
 
 };

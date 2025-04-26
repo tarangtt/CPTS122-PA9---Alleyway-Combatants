@@ -6,8 +6,16 @@
 //SMFL libs
 #include <SFML/Graphics.hpp>
 
-//typedefs
+//typedefs / structs
 typedef unsigned int uint;
+
+typedef struct spritePack
+{
+	std::string path;
+	sf::Texture texture;
+	sf::Sprite sprite;
+
+} sprites;
 
 //constants
 #define SCREEN_HEIGHT 720 
@@ -22,8 +30,11 @@ using std::cout; // cout <<
 using std::endl;
 using std::cerr; //error output
 
+using std::vector;
+
 using std::string;
 using std::to_string; //for the time stuff
+
 
 
 //text colors 
