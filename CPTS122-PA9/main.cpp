@@ -1,6 +1,6 @@
 #include "_libs.hpp"
 #include <SFML/Graphics.hpp>
-#include "mainMenu.hpp"
+#include "MainMenu.hpp"
 
 //only works in debug mode for some reason
 

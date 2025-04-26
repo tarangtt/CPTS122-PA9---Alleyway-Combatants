@@ -138,12 +138,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="CharSelect.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="mainMenu.cpp" />
+    <ClCompile Include="MainMenu.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basePlayer.hpp" />
-    <ClInclude Include="mainMenu.hpp" />
+    <ClInclude Include="CharSelect.hpp" />
+    <ClInclude Include="MainMenu.hpp" />
     <ClInclude Include="_libs.hpp" />
   </ItemGroup>
   <ItemGroup>
