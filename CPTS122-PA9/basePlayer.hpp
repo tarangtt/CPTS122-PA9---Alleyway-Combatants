@@ -30,7 +30,7 @@ protected:
 	//jump
 	uint jumpHeightBase; 
 	uint jumpHeightMaxCharge; 
-	uint weight; //gravity 
+	uint weight; //gravity  - different for diff players
 	
 	//===Sprites===
 	sprites  characterWalk1, characterWalk2, characterBlock, characterJump;
