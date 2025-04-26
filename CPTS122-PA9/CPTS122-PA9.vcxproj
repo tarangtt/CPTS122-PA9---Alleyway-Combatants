@@ -147,6 +147,7 @@
     <ClInclude Include="_libs.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="mianBackground.png" />
     <Image Include="fightSceneBg.png" />
     <Image Include="titleScreen.png" />
   </ItemGroup>
