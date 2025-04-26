@@ -9,17 +9,20 @@ void renderMain(sf::RenderWindow& window)
 	sf::Sprite backgroundSprite(background);
 
 	// Create start button
-	sf::RectangleShape buttonStart(sf::Vector2f(200.f, 50.f)); // Size: 200x50
-	sf::Vector2f pos1(3, 6);
+	sf::RectangleShape buttonStart(sf::Vector2f(400.f, 100.f)); 
+	sf::Vector2f pos1(150, 500);
+	buttonStart.setPosition(pos1);
+	buttonStart.setFillColor(sf::Color::Red);
 
 	// Create exit button
-	sf::RectangleShape buttonExit(sf::Vector2f(200.f, 50.f)); // Size: 200x50
-	sf::Vector2f pos2(20, 6);
-
+	sf::RectangleShape buttonExit(sf::Vector2f(400.f, 100.f));
+	sf::Vector2f pos2(730, 500);
+	buttonExit.setPosition(pos2);
+	buttonExit.setFillColor(sf::Color::Red);
 	
 
 
 	window.draw(backgroundSprite);
-
-
+	window.draw(buttonStart);
+	window.draw(buttonExit);
 }
