@@ -3,7 +3,7 @@
 void renderMain(sf::RenderWindow& window)
 {
 	sf::Texture background;
-	if (!background.loadFromFile("mianBackground.png")) {
+	if (!background.loadFromFile("mainBackground.png")) {
 		return; // Exit if the image fails to load
 	}
 	sf::Sprite backgroundSprite(background);

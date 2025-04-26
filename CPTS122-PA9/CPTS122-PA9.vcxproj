@@ -147,9 +147,8 @@
     <ClInclude Include="_libs.hpp" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="mianBackground.png" />
+    <Image Include="mainBackground.png" />
     <Image Include="fightSceneBg.png" />
-    <Image Include="titleScreen.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
