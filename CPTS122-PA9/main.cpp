@@ -10,9 +10,9 @@ int main(void)
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
-    GameState current = MainMenu;
+    GameState current = mainmenu;
     Texture mainBack("mainBackground.png");
-    mainMenu main(mainBack);
+    MainMenu main(mainBack);
     //sf::Sprite backgroundSprite(imagepath);
 
     while (window.isOpen())
@@ -27,15 +27,15 @@ int main(void)
                     if (mouseButtonPressed->button == sf::Mouse::Button::Left)
                     {
                         switch (current) {
-                        case MainMenu:
+                        case mainmenu:
                             main.checkStart(window, mouseButtonPressed);
                             main.checkExit(window, mouseButtonPressed);
                             break;
-                        case CharSelect:
+                        case charselect:
                             break;
-                        case InGame:
+                        case ingame:
                             break;
-                        case Gameover:
+                        case gameover:
                             break;
                         }
                     }
@@ -47,22 +47,21 @@ int main(void)
         window.clear();
 
         switch (current) {
-        case MainMenu:
+        case mainmenu:
             main.renderMain(window, current);
-
             break;
-        case CharSelect:
+        case charselect:
             
             break;
-        case InGame:
+        case ingame:
             //backgroundSprite.setTexture();
 
             break;
-        case Paused:
+        case paused:
             //backgroundSprite.setTexture();
 
             break;
-        case Gameover:
+        case gameover:
             //backgroundSprite.setTexture();
 
             break;

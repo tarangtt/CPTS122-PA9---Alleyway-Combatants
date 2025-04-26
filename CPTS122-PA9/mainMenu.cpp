@@ -2,7 +2,7 @@
 
 
 
-mainMenu::mainMenu(Texture& as) : backgroundSprite(as), buttonStart(sf::Vector2f(400.f, 100.f)), buttonExit(sf::Vector2f(400.f, 100.f))
+MainMenu::MainMenu(Texture& as) : backgroundSprite(as), buttonStart(sf::Vector2f(400.f, 100.f)), buttonExit(sf::Vector2f(400.f, 100.f))
 {
 
 	// Create start button
@@ -17,7 +17,7 @@ mainMenu::mainMenu(Texture& as) : backgroundSprite(as), buttonStart(sf::Vector2f
 	
 }
 
-void mainMenu::renderMain(sf::RenderWindow& window, GameState& current)
+void MainMenu::renderMain(sf::RenderWindow& window, GameState& current)
 {
 	if (!start) {
 		backgroundSprite.setColor(sf::Color(x, x, x));
@@ -33,7 +33,12 @@ void mainMenu::renderMain(sf::RenderWindow& window, GameState& current)
 		Sleep(1);
 		x -= 2;
 		if (x < 0) {
-			current = CharSelect;
+			if (change == 1) {
+				current = charselect;
+			}
+			else {
+				window.close();
+			}
 			x = 255;
 			change = 0;
 		}
@@ -43,7 +48,7 @@ void mainMenu::renderMain(sf::RenderWindow& window, GameState& current)
 	window.draw(buttonExit);
 }
 
-void mainMenu::checkStart(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP)
+void MainMenu::checkStart(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP)
 {
 	sf::Vector2i pixelPos(MBP->position.x, MBP->position.y);
 	sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
@@ -52,19 +57,11 @@ void mainMenu::checkStart(sf::RenderWindow& window, const sf::Event::MouseButton
 	}
 }
 
-void mainMenu::checkExit(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP)
+void MainMenu::checkExit(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP)
 {
 	sf::Vector2i pixelPos(MBP->position.x, MBP->position.y);
 	sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
 	if (buttonExit.getGlobalBounds().contains(static_cast<sf::Vector2f>(worldPos))) {
 		change = 2;
-	}
-}
-
-void mainMenu::dimm()
-{
-	int x = 256;
-	while (x > 0) {
-
 	}
 }

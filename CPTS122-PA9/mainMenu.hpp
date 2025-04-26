@@ -8,17 +8,15 @@
 using namespace std;
 using namespace sf;
 
-class mainMenu {
+class MainMenu {
 public:
-	mainMenu(Texture& as);
+	MainMenu(Texture& as);
 
 	void renderMain(sf::RenderWindow& window, GameState& current);
 
 	void checkStart(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP);
 
 	void checkExit(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP);
-
-	void dimm();
 
 private:
 	int start = 0, x = 0, change = 0;

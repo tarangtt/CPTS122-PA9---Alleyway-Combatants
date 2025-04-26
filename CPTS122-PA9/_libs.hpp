@@ -22,7 +22,7 @@ typedef struct spritePack
 #define SCREEN_HEIGHT 720 
 #define SCREEN_WIDTH  1280
 
-enum GameState {MainMenu, CharSelect, InGame, Paused, Gameover};
+enum GameState {mainmenu, charselect, ingame, paused, gameover};
 
 
 //using -- 
