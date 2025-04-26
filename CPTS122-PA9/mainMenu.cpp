@@ -8,13 +8,17 @@ void renderMain(sf::RenderWindow& window)
 	}
 	sf::Sprite backgroundSprite(background);
 
-	// Create a button (RectangleShape)
-	sf::RectangleShape button(sf::Vector2f(200.f, 50.f)); // Size: 200x50
-	sf::Vector2f pos(3,6);
+	// Create start button
+	sf::RectangleShape buttonStart(sf::Vector2f(200.f, 50.f)); // Size: 200x50
+	sf::Vector2f pos1(3, 6);
 
-	// 
+	// Create exit button
+	sf::RectangleShape buttonExit(sf::Vector2f(200.f, 50.f)); // Size: 200x50
+	sf::Vector2f pos2(20, 6);
+
 	
-	button.setPosition(pos);
+
+
 	window.draw(backgroundSprite);
 
 
