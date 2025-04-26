@@ -12,13 +12,16 @@ class mainMenu {
 public:
 	mainMenu(Texture& as);
 
-	void renderMain(sf::RenderWindow& window);
+	void renderMain(sf::RenderWindow& window, GameState& current);
 
-	void checkStart(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP, GameState& current);
+	void checkStart(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP);
 
 	void checkExit(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP);
 
+	void dimm();
+
 private:
+	int start = 0, x = 0, change = 0;
 	sf::RectangleShape buttonStart;
 	sf::RectangleShape buttonExit;
 	sf::Sprite backgroundSprite;

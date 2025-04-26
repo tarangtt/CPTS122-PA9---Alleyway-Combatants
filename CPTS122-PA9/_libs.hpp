@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <string>
+#include <Windows.h>
 
 //SMFL libs
 #include <SFML/Graphics.hpp>

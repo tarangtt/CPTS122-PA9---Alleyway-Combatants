@@ -40,10 +40,7 @@ protected:
 
 
 public:
-	void draw()
-	{
-
-	}
+	void draw();
 
 
 };

@@ -28,7 +28,7 @@ int main(void)
                     {
                         switch (current) {
                         case MainMenu:
-                            main.checkStart(window, mouseButtonPressed, current);
+                            main.checkStart(window, mouseButtonPressed);
                             main.checkExit(window, mouseButtonPressed);
                             break;
                         case CharSelect:
@@ -48,7 +48,7 @@ int main(void)
 
         switch (current) {
         case MainMenu:
-            main.renderMain(window);
+            main.renderMain(window, current);
 
             break;
         case CharSelect:

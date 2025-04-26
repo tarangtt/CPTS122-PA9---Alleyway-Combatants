@@ -17,20 +17,38 @@ mainMenu::mainMenu(Texture& as) : backgroundSprite(as), buttonStart(sf::Vector2f
 	
 }
 
-void mainMenu::renderMain(sf::RenderWindow& window)
+void mainMenu::renderMain(sf::RenderWindow& window, GameState& current)
 {
-
+	if (!start) {
+		backgroundSprite.setColor(sf::Color(x, x, x));
+		Sleep(1);
+		x += 2;
+		if (x > 253) {
+			x = 255;
+			start = 1;
+		}
+	}
+	if (change) {
+		backgroundSprite.setColor(sf::Color(x, x, x));
+		Sleep(1);
+		x -= 2;
+		if (x < 0) {
+			current = CharSelect;
+			x = 255;
+			change = 0;
+		}
+	}
 	window.draw(backgroundSprite);
 	window.draw(buttonStart);
 	window.draw(buttonExit);
 }
 
-void mainMenu::checkStart(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP, GameState& current)
+void mainMenu::checkStart(sf::RenderWindow& window, const sf::Event::MouseButtonPressed* MBP)
 {
 	sf::Vector2i pixelPos(MBP->position.x, MBP->position.y);
 	sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
 	if (buttonStart.getGlobalBounds().contains(static_cast<sf::Vector2f>(worldPos))) {
-		current = CharSelect;
+		change = 1;
 	}
 }
 
@@ -39,6 +57,14 @@ void mainMenu::checkExit(sf::RenderWindow& window, const sf::Event::MouseButtonP
 	sf::Vector2i pixelPos(MBP->position.x, MBP->position.y);
 	sf::Vector2f worldPos = window.mapPixelToCoords(pixelPos);
 	if (buttonExit.getGlobalBounds().contains(static_cast<sf::Vector2f>(worldPos))) {
-		window.close();
+		change = 2;
+	}
+}
+
+void mainMenu::dimm()
+{
+	int x = 256;
+	while (x > 0) {
+
 	}
 }
