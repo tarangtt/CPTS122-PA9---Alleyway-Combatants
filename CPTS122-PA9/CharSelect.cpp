@@ -105,9 +105,9 @@ void CharSelect::renderChar(sf::RenderWindow& window, GameState& current)
 
 void CharSelect::p1Displace(int i)
 {
-	sf::Vector2f pos1(120, 501); // 120,   236 , 352
-	sf::Vector2f pos2(236, 501); // 120,   236 , 352
-	sf::Vector2f pos3(354, 501); // 120,   236 , 352
+	sf::Vector2f pos1(121, 501); // 120,   236 , 352
+	sf::Vector2f pos2(237, 501); // 120,   236 , 352
+	sf::Vector2f pos3(353, 501); // 120,   236 , 352
 
 	switch (i) {
 	case 1:
@@ -137,9 +137,9 @@ void CharSelect::p1Displace(int i)
 
 void CharSelect::p2Displace(int i)
 {
-	sf::Vector2f pos1(809, 501); // 810,  926 , 1042
+	sf::Vector2f pos1(811, 501); // 810,  926 , 1042
 	sf::Vector2f pos2(927, 501); // 810,  926 , 1042
-	sf::Vector2f pos3(1044, 501); // 810,  926 , 1042
+	sf::Vector2f pos3(1042, 501); // 810,  926 , 1042
 
 	switch (i) {
 	case 1:
