@@ -11,6 +11,8 @@ int main(void)
     shape.setFillColor(sf::Color::Green);
 
     GameState current = MainMenu;
+    Texture mainBack("mainBackground.png");
+    mainMenu main(mainBack);
     //sf::Sprite backgroundSprite(imagepath);
 
     while (window.isOpen())
@@ -24,9 +26,18 @@ int main(void)
                 {
                     if (mouseButtonPressed->button == sf::Mouse::Button::Left)
                     {
-                        std::cout << "the right button was pressed" << std::endl;
-                        std::cout << "mouse x: " << mouseButtonPressed->position.x << std::endl;
-                        std::cout << "mouse y: " << mouseButtonPressed->position.y << std::endl;
+                        switch (current) {
+                        case MainMenu:
+                            main.checkStart(window, mouseButtonPressed, current);
+                            main.checkExit(window, mouseButtonPressed);
+                            break;
+                        case CharSelect:
+                            break;
+                        case InGame:
+                            break;
+                        case Gameover:
+                            break;
+                        }
                     }
                 }
             }
@@ -37,7 +48,7 @@ int main(void)
 
         switch (current) {
         case MainMenu:
-            renderMain(window);
+            main.renderMain(window);
 
             break;
         case CharSelect:
