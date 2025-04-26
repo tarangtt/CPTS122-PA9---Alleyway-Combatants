@@ -1,5 +1,6 @@
 #include "_libs.hpp"
 #include <SFML/Graphics.hpp>
+#include "mainMenu.hpp"
 
 //only works in debug mode for some reason
 
@@ -9,7 +10,7 @@ int main(void)
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
-    GameState currentPage = MainMenu;
+    GameState current = MainMenu;
     //sf::Sprite backgroundSprite(imagepath);
 
     while (window.isOpen())
@@ -18,38 +19,34 @@ int main(void)
         {
             if (event->is<sf::Event::Closed>())
                 window.close();
-            else
+        
 
-                switch (currentPage) {
-                case MainMenu:
-                    
-                    break;
-                case CharSelect:
-                    //backgroundSprite.setTexture();
-
-                    break;
-                case InGame:
-                    //backgroundSprite.setTexture();
-
-                    break;
-                case Paused:
-                    //backgroundSprite.setTexture();
-
-                    break;
-                case Gameover:
-                    //backgroundSprite.setTexture();
-
-                    break;
-                }
         }
 
         window.clear();
-        switch (currentPage) {
-        case MainMenu:
-        break;
 
+        switch (current) {
+        case MainMenu:
+            renderMain(window);
+
+            break;
+        case CharSelect:
+            //backgroundSprite.setTexture();
+
+            break;
+        case InGame:
+            //backgroundSprite.setTexture();
+
+            break;
+        case Paused:
+            //backgroundSprite.setTexture();
+
+            break;
+        case Gameover:
+            //backgroundSprite.setTexture();
+
+            break;
         }
-        window.draw(shape); 
         window.display();
     }
 }
