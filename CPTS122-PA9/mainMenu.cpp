@@ -19,7 +19,7 @@ MainMenu::MainMenu(Texture& as) : backgroundSprite(as), buttonStart(sf::Vector2f
 
 void MainMenu::renderMain(sf::RenderWindow& window, GameState& current)
 {
-	if (!start) {
+	if (!start && !change) {
 		backgroundSprite.setColor(sf::Color(x, x, x));
 		Sleep(1);
 		x += 2;

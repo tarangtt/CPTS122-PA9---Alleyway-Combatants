@@ -150,8 +150,10 @@
     <ClInclude Include="_libs.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="charBackground.png" />
     <Image Include="mainBackground.png" />
     <Image Include="fightSceneBg.png" />
+    <Image Include="selected.png" />
     <Image Include="Tarang\TarangBlock.png" />
     <Image Include="Tarang\TarangJump.png" />
     <Image Include="Tarang\TarangKick1.png" />
