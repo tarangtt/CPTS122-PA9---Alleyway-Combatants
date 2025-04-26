@@ -149,6 +149,22 @@
   <ItemGroup>
     <Image Include="mainBackground.png" />
     <Image Include="fightSceneBg.png" />
+    <Image Include="Tarang\TarangBlock.png" />
+    <Image Include="Tarang\TarangJump.png" />
+    <Image Include="Tarang\TarangKick1.png" />
+    <Image Include="Tarang\TarangKick2.png" />
+    <Image Include="Tarang\TarangPunch1.png" />
+    <Image Include="Tarang\TarangPunch2.png" />
+    <Image Include="Tarang\TarangWalk1.png" />
+    <Image Include="Tarang\TarangWalk2.png" />
+    <Image Include="Yuta\YutaBlock.png" />
+    <Image Include="Yuta\YutaJump.png" />
+    <Image Include="Yuta\YutaKick1.png" />
+    <Image Include="Yuta\YutaKick2.png" />
+    <Image Include="Yuta\YutaPunch1.png" />
+    <Image Include="Yuta\YutaPunch2.png" />
+    <Image Include="Yuta\YutaWalk1.png" />
+    <Image Include="Yuta\YutaWalk2.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

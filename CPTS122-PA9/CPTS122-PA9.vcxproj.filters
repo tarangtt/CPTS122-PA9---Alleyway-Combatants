@@ -37,7 +37,55 @@
     <Image Include="fightSceneBg.png">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="titleScreen.png">
+    <Image Include="mainBackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangBlock.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangJump.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangKick1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangKick2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangPunch1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangPunch2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangWalk1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangWalk2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta\YutaBlock.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta\YutaJump.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta\YutaKick1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta\YutaKick2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta\YutaPunch1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta\YutaPunch2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta\YutaWalk1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta\YutaWalk2.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
