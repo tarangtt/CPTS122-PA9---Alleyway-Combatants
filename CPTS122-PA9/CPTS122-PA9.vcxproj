@@ -146,6 +146,9 @@
     <ClInclude Include="mainMenu.hpp" />
     <ClInclude Include="_libs.hpp" />
   </ItemGroup>
+  <ItemGroup>
+    <Image Include="mianBackground.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

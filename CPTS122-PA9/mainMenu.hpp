@@ -7,3 +7,4 @@
 using namespace std;
 using namespace sf;
 
+void renderMain(sf::RenderWindow& window);

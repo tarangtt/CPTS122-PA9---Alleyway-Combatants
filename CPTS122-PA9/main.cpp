@@ -1,5 +1,6 @@
 #include "_libs.hpp"
 #include <SFML/Graphics.hpp>
+#include "mainMenu.hpp"
 
 //only works in debug mode for some reason
 
@@ -18,33 +19,34 @@ int main(void)
         {
             if (event->is<sf::Event::Closed>())
                 window.close();
-            else
+        
 
-                switch (current) {
-                case MainMenu:
-                    
-                    break;
-                case CharSelect:
-                    //backgroundSprite.setTexture();
-
-                    break;
-                case InGame:
-                    //backgroundSprite.setTexture();
-
-                    break;
-                case Paused:
-                    //backgroundSprite.setTexture();
-
-                    break;
-                case Gameover:
-                    //backgroundSprite.setTexture();
-
-                    break;
-                }
         }
 
         window.clear();
-        window.draw(shape);
+
+        switch (current) {
+        case MainMenu:
+            renderMain(window);
+
+            break;
+        case CharSelect:
+            //backgroundSprite.setTexture();
+
+            break;
+        case InGame:
+            //backgroundSprite.setTexture();
+
+            break;
+        case Paused:
+            //backgroundSprite.setTexture();
+
+            break;
+        case Gameover:
+            //backgroundSprite.setTexture();
+
+            break;
+        }
         window.display();
     }
 }
