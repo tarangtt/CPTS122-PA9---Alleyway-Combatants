@@ -11,7 +11,6 @@ typedef struct spritePack
 
 } sprites;
 
-
 class BasePlayer
 {
 protected:
@@ -20,27 +19,24 @@ protected:
 	uint healthMax;
 
 	//defense
-	float damageReduction; //defense reduction (%/100)
+	float damageReduction; //defense reduction (%/100) (less than 1 = lower dmg; greater than 1 = higher dmg) 
+	//movement speed
+	uint movementSpeed;
 
 	//attack
-	uint attackDamageBase; 
-	uint chargedAttackMaxCharge;
-	uint chargedAttackCurrCharge;
+	uint attackDamageBase;
+	uint attackMaxCharge;
 	
-	//movement speed
-	uint movementSpeedMax;
-
 	//jump
 	uint jumpHeightBase; 
-	uint jumpHeightMaxCharge; //how high you go
-	uint jumpHeightCurrCharge; //how high you go
-	uint weight; //how fast you go back down
+	uint jumpHeightMaxCharge; 
+	uint weight; //gravity 
 	
 	//===Sprites===
 	sprites  characterRest, characterBlock, characterJump, characterFloat;
 	sprites  characterHighAttackLaunch, characterHighAttackCharge;
 	sprites  characterLowAttackLaunch, characterLowAttackCharge;
-
+	
 
 
 };
