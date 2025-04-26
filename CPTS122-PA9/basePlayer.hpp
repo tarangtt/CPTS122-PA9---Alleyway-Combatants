@@ -3,14 +3,6 @@
 #include "_libs.hpp"
 
 
-typedef struct spritePack
-{
-	std::string path;
-	sf::Texture texture;
-	sf::Sprite sprite;
-
-} sprites;
-
 class BasePlayer
 {
 protected:
