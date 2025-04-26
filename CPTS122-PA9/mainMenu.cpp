@@ -12,13 +12,13 @@ void renderMain(sf::RenderWindow& window)
 	sf::RectangleShape buttonStart(sf::Vector2f(400.f, 100.f)); 
 	sf::Vector2f pos1(150, 500);
 	buttonStart.setPosition(pos1);
-	buttonStart.setFillColor(sf::Color::Red);
+	buttonStart.setFillColor(sf::Color::Transparent);
 
 	// Create exit button
 	sf::RectangleShape buttonExit(sf::Vector2f(400.f, 100.f));
 	sf::Vector2f pos2(730, 500);
 	buttonExit.setPosition(pos2);
-	buttonExit.setFillColor(sf::Color::Red);
+	buttonExit.setFillColor(sf::Color::Transparent);
 	
 
 

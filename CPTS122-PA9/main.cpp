@@ -19,7 +19,17 @@ int main(void)
         {
             if (event->is<sf::Event::Closed>())
                 window.close();
-        
+            else {
+                if (const auto* mouseButtonPressed = event->getIf<sf::Event::MouseButtonPressed>())
+                {
+                    if (mouseButtonPressed->button == sf::Mouse::Button::Left)
+                    {
+                        std::cout << "the right button was pressed" << std::endl;
+                        std::cout << "mouse x: " << mouseButtonPressed->position.x << std::endl;
+                        std::cout << "mouse y: " << mouseButtonPressed->position.y << std::endl;
+                    }
+                }
+            }
 
         }
 
@@ -31,8 +41,7 @@ int main(void)
 
             break;
         case CharSelect:
-            //backgroundSprite.setTexture();
-
+            
             break;
         case InGame:
             //backgroundSprite.setTexture();
