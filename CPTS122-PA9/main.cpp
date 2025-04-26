@@ -15,10 +15,13 @@ int main(void)
 
     Texture charBack("charBackground.png");
     Texture selectText("selected.png");
-    Texture Yuta("selected.png");
-    Texture Tarang("selected.png");
-    Texture John("selected.png");
-    CharSelect charSelect(charBack, selectText, Yuta, Tarang, John);
+    Texture Yuta("TestYuta.png"); //298px
+    Texture Tarang("TestTarang.jpg");
+    Texture John("TestJohn.jpg");
+    Texture miniYuta("TestMiniYuta.png"); //114px
+    Texture miniTarang("TestMiniTarang.jpg");
+    Texture miniJohn("TestMiniJohn.jpg");
+    CharSelect charSelect(charBack, selectText, Yuta, Tarang, John, miniYuta, miniTarang, miniJohn);
 
     while (window.isOpen())
     {
@@ -44,22 +47,22 @@ int main(void)
             else if (const auto* keyPressed = event->getIf<sf::Event::KeyPressed>()) {
                 if (current == charselect) {
                     if (keyPressed->scancode == sf::Keyboard::Scan::A) {
-
+                        charSelect.p1Displace(1);
                     }
                     else if (keyPressed->scancode == sf::Keyboard::Scan::D) {
-
+                        charSelect.p1Displace(2);
                     }
                     else if (keyPressed->scancode == sf::Keyboard::Scan::S) {
-
+                        charSelect.p1Displace(3);
                     }
                     else if (keyPressed->scancode == sf::Keyboard::Scan::J) {
-
+                        charSelect.p2Displace(1);
+                    }
+                    else if (keyPressed->scancode == sf::Keyboard::Scan::L) {
+                        charSelect.p2Displace(2);
                     }
                     else if (keyPressed->scancode == sf::Keyboard::Scan::K) {
-
-                    }
-                    else if (keyPressed->scancode == sf::Keyboard::Scan::I) {
-
+                        charSelect.p2Displace(3);
                     }
                 }
                 else if (current == ingame) {

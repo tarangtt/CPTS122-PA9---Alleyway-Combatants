@@ -10,7 +10,7 @@ using namespace sf;
 
 class CharSelect {
 public:
-	CharSelect(Texture& background, Texture& select, Texture& Yuta, Texture& Tarang, Texture& John);
+	CharSelect(Texture& background, Texture& select, Texture& Yuta, Texture& Tarang, Texture& John, Texture& miniYuta, Texture& miniTarang, Texture& miniJohn);
 
 	void renderChar(sf::RenderWindow& window, GameState& current);
 
@@ -37,5 +37,8 @@ private:
 	sf::Sprite p2STarang;
 	sf::Sprite p2SJohn;
 
-};
+	sf::Sprite& p1CurrentSprite(int i);
+	sf::Sprite& p2CurrentSprite(int i);
 
+	void resetColor(void);
+};
