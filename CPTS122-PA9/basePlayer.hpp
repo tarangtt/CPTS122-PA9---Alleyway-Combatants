@@ -33,7 +33,7 @@ protected:
 	uint weight; //gravity 
 	
 	//===Sprites===
-	sprites  characterRest, characterBlock, characterJump;
+	sprites  characterWalk1, characterWalk2, characterBlock, characterJump;
 	sprites  characterHighAttackLaunch, characterHighAttackCharge;
 	sprites  characterLowAttackLaunch, characterLowAttackCharge;
 	

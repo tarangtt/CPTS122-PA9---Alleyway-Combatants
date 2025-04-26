@@ -9,7 +9,7 @@ int main(void)
     sf::CircleShape shape(100.f);
     shape.setFillColor(sf::Color::Green);
 
-    GameState current = MainMenu;
+    GameState currentPage = MainMenu;
     //sf::Sprite backgroundSprite(imagepath);
 
     while (window.isOpen())
@@ -20,7 +20,7 @@ int main(void)
                 window.close();
             else
 
-                switch (current) {
+                switch (currentPage) {
                 case MainMenu:
                     
                     break;
@@ -44,7 +44,12 @@ int main(void)
         }
 
         window.clear();
-        window.draw(shape);
+        switch (currentPage) {
+        case MainMenu:
+        break;
+
+        }
+        window.draw(shape); 
         window.display();
     }
 }
