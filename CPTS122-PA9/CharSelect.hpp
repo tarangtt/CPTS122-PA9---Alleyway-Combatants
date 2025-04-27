@@ -18,6 +18,7 @@ public:
 
 	void p2Displace(int i);
 
+
 private:
 	int start = 0, x = 0, change = 0;
 	sf::Sprite backgroundSprite;
@@ -41,4 +42,6 @@ private:
 	sf::Sprite& p2CurrentSprite(int i);
 
 	void resetColor(void);
+	void setColors(int x);
+	void setHue(int p1, int p2);
 };

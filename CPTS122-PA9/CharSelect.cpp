@@ -42,9 +42,7 @@ CharSelect::CharSelect(Texture& background, Texture& select, Texture& Yuta, Text
 void CharSelect::renderChar(sf::RenderWindow& window, GameState& current)
 {
 	if (!start) {
-		backgroundSprite.setColor(sf::Color(x, x, x));
-		p1CurrentSprite(p1).setColor(sf::Color(x, x, x));
-		p2CurrentSprite(p2).setColor(sf::Color(x, x, x));
+		setColors(x);
 		Sleep(1);
 		x += 2;
 		if (x > 253) {
@@ -54,9 +52,7 @@ void CharSelect::renderChar(sf::RenderWindow& window, GameState& current)
 		}
 	}
 	if (change) {
-		backgroundSprite.setColor(sf::Color(x, x, x));
-		p1CurrentSprite(p1).setColor(sf::Color(x, x, x));
-		p2CurrentSprite(p2).setColor(sf::Color(x, x, x));
+		setColors(x);
 		Sleep(1);
 		x -= 2;
 		if (x < 0) {
@@ -82,9 +78,6 @@ void CharSelect::renderChar(sf::RenderWindow& window, GameState& current)
 	window.draw(p1BJohn);
 		break;
 	}
-	window.draw(p1SYuta);
-	window.draw(p1STarang);
-	window.draw(p1SJohn);
 	switch (p2) {
 	case 1:
 		window.draw(p2BYuta);
@@ -96,6 +89,10 @@ void CharSelect::renderChar(sf::RenderWindow& window, GameState& current)
 		window.draw(p2BJohn);
 		break;
 	}
+	setHue(p1, p2);
+	window.draw(p1SYuta);
+	window.draw(p1STarang);
+	window.draw(p1SJohn);
 	window.draw(p2SYuta);
 	window.draw(p2STarang);
 	window.draw(p2SJohn);
@@ -139,7 +136,7 @@ void CharSelect::p2Displace(int i)
 {
 	sf::Vector2f pos1(811, 501); // 810,  926 , 1042
 	sf::Vector2f pos2(927, 501); // 810,  926 , 1042
-	sf::Vector2f pos3(1042, 501); // 810,  926 , 1042
+	sf::Vector2f pos3(1043, 501); // 810,  926 , 1042
 
 	switch (i) {
 	case 1:
@@ -201,3 +198,55 @@ void CharSelect::resetColor(void) {
 	p2BTarang.setColor(sf::Color(x, x, x));
 	p2BJohn.setColor(sf::Color(x, x, x));
 }
+
+void CharSelect::setColors(int x)
+{
+	backgroundSprite.setColor(sf::Color(x, x, x));
+	p1CurrentSprite(p1).setColor(sf::Color(x, x, x));
+	p2CurrentSprite(p2).setColor(sf::Color(x, x, x));
+	p1SYuta.setColor(sf::Color(x, x, x));
+	p1STarang.setColor(sf::Color(x, x, x));
+	p1SJohn.setColor(sf::Color(x, x, x));
+	p2SYuta.setColor(sf::Color(x, x, x));
+	p2STarang.setColor(sf::Color(x, x, x));
+	p2SJohn.setColor(sf::Color(x, x, x));
+}
+
+void CharSelect::setHue(int p1, int p2)
+{
+	switch (p1) {
+	case 1:
+		p1STarang.setColor(sf::Color(255, 255, 255, 128));
+		p1SJohn.setColor(sf::Color(255, 255, 255, 128));
+		p1SYuta.setColor(sf::Color(255, 255, 255, 255));
+		break;
+	case 2:
+		p1SYuta.setColor(sf::Color(255, 255, 255, 128));
+		p1SJohn.setColor(sf::Color(255, 255, 255, 128));
+		p1STarang.setColor(sf::Color(255, 255, 255, 255));
+		break;
+	case 3:
+		p1SYuta.setColor(sf::Color(255, 255, 255, 128));
+		p1STarang.setColor(sf::Color(255, 255, 255, 128));
+		p1SJohn.setColor(sf::Color(255, 255, 255, 255));
+		break;
+	}
+	switch (p2) {
+	case 1:
+		p2STarang.setColor(sf::Color(255, 255, 255, 128));
+		p2SJohn.setColor(sf::Color(255, 255, 255, 128));
+		p2SYuta.setColor(sf::Color(255, 255, 255, 255));
+		break;
+	case 2:
+		p2SYuta.setColor(sf::Color(255, 255, 255, 128));
+		p2SJohn.setColor(sf::Color(255, 255, 255, 128));
+		p2STarang.setColor(sf::Color(255, 255, 255, 255));
+		break;
+	case 3:
+		p2SYuta.setColor(sf::Color(255, 255, 255, 128));
+		p2STarang.setColor(sf::Color(255, 255, 255, 128));
+		p2SJohn.setColor(sf::Color(255, 255, 255, 255));
+		break;
+	}
+}
+
