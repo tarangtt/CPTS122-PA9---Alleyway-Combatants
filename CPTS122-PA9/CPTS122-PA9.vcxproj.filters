@@ -21,6 +21,15 @@
     <ClCompile Include="mainMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="basePlayer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CharSelect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="playerFight.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_libs.hpp">
@@ -30,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="mainMenu.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CharSelect.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -86,6 +98,15 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Yuta\YutaWalk2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="charBackground.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="selected.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="missingTexture.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

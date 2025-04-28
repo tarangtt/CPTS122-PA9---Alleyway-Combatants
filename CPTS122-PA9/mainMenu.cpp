@@ -1,16 +1,14 @@
 #include "MainMenu.hpp"
 
-
-
 MainMenu::MainMenu(Texture& as) : backgroundSprite(as), buttonStart(sf::Vector2f(400.f, 100.f)), buttonExit(sf::Vector2f(400.f, 100.f))
 {
 
-	// Create start button
+	//Create start button
 	sf::Vector2f pos1(150, 500);
 	buttonStart.setPosition(pos1);
 	buttonStart.setFillColor(sf::Color::Transparent);
 
-	// Create exit button
+	//Create exit button
 	sf::Vector2f pos2(730, 500);
 	buttonExit.setPosition(pos2);
 	buttonExit.setFillColor(sf::Color::Transparent);

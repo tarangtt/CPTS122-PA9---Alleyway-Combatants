@@ -142,6 +142,7 @@
     <ClCompile Include="CharSelect.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
+    <ClCompile Include="playerFight.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basePlayer.hpp" />
@@ -153,6 +154,7 @@
     <Image Include="charBackground.png" />
     <Image Include="mainBackground.png" />
     <Image Include="fightSceneBg.png" />
+    <Image Include="missingTexture.png" />
     <Image Include="selected.png" />
     <Image Include="Tarang\TarangBlock.png" />
     <Image Include="Tarang\TarangJump.png" />

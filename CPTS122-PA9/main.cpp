@@ -91,6 +91,7 @@ int main(void)
             break;
         case paused:
             //backgroundSprite.setTexture();
+            
 
             break;
         case gameover:
