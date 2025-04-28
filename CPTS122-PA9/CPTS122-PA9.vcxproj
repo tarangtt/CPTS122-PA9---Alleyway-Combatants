@@ -152,11 +152,20 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="charBackground.png" />
+    <Image Include="John\JohnBlock.png" />
+    <Image Include="John\JohnJump.png" />
+    <Image Include="John\JohnKick1.png" />
+    <Image Include="John\JohnKick2.png" />
+    <Image Include="John\JohnPunch1.png" />
+    <Image Include="John\JohnPunch2.png" />
+    <Image Include="John\JohnWalk1.png" />
+    <Image Include="John\JohnWalk2.png" />
     <Image Include="mainBackground.png" />
     <Image Include="fightSceneBg.png" />
     <Image Include="missingTexture.png" />
     <Image Include="selected.png" />
     <Image Include="Tarang\TarangBlock.png" />
+    <Image Include="Tarang\TarangCharge.png" />
     <Image Include="Tarang\TarangJump.png" />
     <Image Include="Tarang\TarangKick1.png" />
     <Image Include="Tarang\TarangKick2.png" />
