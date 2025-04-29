@@ -30,6 +30,9 @@
     <ClCompile Include="playerFight.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="_libs.hpp">
@@ -42,6 +45,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="CharSelect.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Test.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -107,6 +113,42 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="missingTexture.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnBlock.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnJump.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnKick1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnKick2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnPunch1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnPunch2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnWalk1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnWalk2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangCharge.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Yuta.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

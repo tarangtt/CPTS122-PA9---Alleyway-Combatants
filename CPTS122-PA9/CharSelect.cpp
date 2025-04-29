@@ -5,6 +5,7 @@ CharSelect::CharSelect(Texture& background, Texture& select, Texture& Yuta, Text
 	p1BYuta(Yuta), p1BTarang(Tarang), p1BJohn(John), p1SYuta(miniYuta), p1STarang(miniTarang), p1SJohn(miniJohn),
 	p2BYuta(Yuta), p2BTarang(Tarang), p2BJohn(John), p2SYuta(miniYuta), p2STarang(miniTarang), p2SJohn(miniJohn) {
 
+	
 	// Set p1Select button
 	sf::Vector2f pos1(119, 501); // 119,   237 , 354
 	p1Select.setPosition(pos1); 

@@ -1,28 +1,33 @@
 #include "_libs.hpp"
-#include <SFML/Graphics.hpp>
 #include "MainMenu.hpp"
 #include "CharSelect.hpp"
+#include "basePlayer.hpp"
 
-//only works in debug mode for some reason
+#include <SFML/Graphics.hpp> //only works in debug mode for some reason
 
 int main(void)
 {
     sf::RenderWindow window(sf::VideoMode({ SCREEN_WIDTH , SCREEN_HEIGHT }), "SFML works!");
 
     GameState current = mainmenu;
+    FightState fighting = FightState::NotStarted;
+
     Texture mainBack("mainBackground.png");
     MainMenu mainMenu(mainBack);
 
     Texture charBack("charBackground.png");
     Texture selectText("selected.png");
-    Texture Yuta("TestYuta.png"); //298px
-    Texture Tarang("TestTarang.jpg");
-    Texture John("TestJohn.jpg");
+    Texture Yuta("Yuta.png"); //298px
+    Texture Tarang("Tarang.png");
+    Texture John("John.png");
     Texture miniYuta("TestMiniYuta.png"); //114px
     Texture miniTarang("TestMiniTarang.jpg");
     Texture miniJohn("TestMiniJohn.jpg");
     CharSelect charSelect(charBack, selectText, Yuta, Tarang, John, miniYuta, miniTarang, miniJohn);
 
+    int p1 = 1, p2 = 2;
+
+    window.setFramerateLimit(240); //very important
     while (window.isOpen())
     {
         while (const std::optional event = window.pollEvent())
@@ -64,9 +69,11 @@ int main(void)
                     else if (keyPressed->scancode == sf::Keyboard::Scan::K) {
                         charSelect.p2Displace(3);
                     }
-                }
-                else if (current == ingame) {
-
+                    else if (keyPressed->scancode == sf::Keyboard::Scan::Enter)
+                    {
+                        current = ingame;
+                        fighting = FightState::Ongoing;
+                    }
                 }
                 else {
 
@@ -86,17 +93,19 @@ int main(void)
             charSelect.renderChar(window, current);
             break;
         case ingame:
-            //backgroundSprite.setTexture();
+            fighting = runGameScene(window, charSelect.getP1Selection(), charSelect.getP2Selection());
 
+            if (fighting == FightState::Aborted) window.close();
+            else if (fighting > FightState::Ongoing) current = gameover;
             break;
-        case paused:
-            //backgroundSprite.setTexture();
             
 
-            break;
         case gameover:
-            //backgroundSprite.setTexture();
+            window.close();
 
+            cout << GRN << "!!!!!!!!!!!!!!! PLAYER " << (fighting == FightState::P1Wins ? "1" : "2") << " WINS !!!!!!!!!!!!!!!" << RST <<endl;
+
+            system("Pause");
             break;
         }
         window.display();

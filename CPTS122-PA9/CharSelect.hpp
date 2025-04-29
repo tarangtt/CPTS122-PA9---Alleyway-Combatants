@@ -18,6 +18,9 @@ public:
 
 	void p2Displace(int i);
 
+	int getP1Selection() const { return p1; }
+	int getP2Selection() const { return p2; }
+
 
 private:
 	int start = 0, x = 0, change = 0;

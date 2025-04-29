@@ -143,15 +143,18 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MainMenu.cpp" />
     <ClCompile Include="playerFight.cpp" />
+    <ClCompile Include="Test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="basePlayer.hpp" />
     <ClInclude Include="CharSelect.hpp" />
     <ClInclude Include="MainMenu.hpp" />
+    <ClInclude Include="Test.hpp" />
     <ClInclude Include="_libs.hpp" />
   </ItemGroup>
   <ItemGroup>
     <Image Include="charBackground.png" />
+    <Image Include="John.png" />
     <Image Include="John\JohnBlock.png" />
     <Image Include="John\JohnJump.png" />
     <Image Include="John\JohnKick1.png" />
@@ -164,6 +167,7 @@
     <Image Include="fightSceneBg.png" />
     <Image Include="missingTexture.png" />
     <Image Include="selected.png" />
+    <Image Include="Tarang.png" />
     <Image Include="Tarang\TarangBlock.png" />
     <Image Include="Tarang\TarangCharge.png" />
     <Image Include="Tarang\TarangJump.png" />
@@ -173,6 +177,7 @@
     <Image Include="Tarang\TarangPunch2.png" />
     <Image Include="Tarang\TarangWalk1.png" />
     <Image Include="Tarang\TarangWalk2.png" />
+    <Image Include="Yuta.png" />
     <Image Include="Yuta\YutaBlock.png" />
     <Image Include="Yuta\YutaJump.png" />
     <Image Include="Yuta\YutaKick1.png" />

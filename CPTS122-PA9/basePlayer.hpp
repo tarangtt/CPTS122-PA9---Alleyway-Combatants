@@ -1,13 +1,47 @@
 #pragma once
 #include "_libs.hpp"
 
-class Player {
+class PlayerTextures {
 private:
-    //player trackin
+    std::unordered_map<std::string, sf::Texture> textures;
+
+public:
+    PlayerTextures() {
+        sf::Texture texture;
+        if (texture.loadFromFile("missingTexture.png")) textures["NULL"] = texture;
+        else std::cerr << "CRITICAL: FAILED TO LOAD missingTexture.png" << std::endl;
+    }
+
+    void addTexture(const std::string& key, const std::string& pathToTexture) {
+        sf::Texture texture;
+        if (texture.loadFromFile(pathToTexture)) textures[key] = texture;
+        else std::cerr << "FAILED TO LOAD " << key << " : " << pathToTexture << std::endl;
+    }
+
+    sf::Texture& getTexture(const std::string& key) {
+        try {
+            return textures.at(key);
+        }
+        catch (...) {
+            return textures.at("NULL");
+        }
+    }
+
+    sf::Texture& get_MISSING_Texture() {
+        return textures.at("NULL");
+    }
+};
+
+
+class BasePlayer
+{
+protected:
+    //player tracking
     bool isJumping;
     bool isChargingJump;
     bool isChargingAttack;
     bool isBlocking;
+    bool isWalking;
     JumpType currentJump;
     AttackType chargingAttackType;
     float verticalVelocity;
@@ -17,8 +51,39 @@ private:
     std::chrono::steady_clock::time_point chargeStart;
     float chargeTime;
     bool hasHitThisAttack;
+    CharacterState currentState;
+    CharacterState previousState;
+    float animationTimer;
+    bool walkFrame;
 
-    //attack and health
+
+
+};
+
+
+class Player : public BasePlayer {
+private:
+    //player tracking
+    bool isJumping;
+    bool isChargingJump;
+    bool isChargingAttack;
+    bool isBlocking;
+    bool isWalking;
+    JumpType currentJump;
+    AttackType chargingAttackType;
+    float verticalVelocity;
+    float horizontalVelocity;
+    float currentHeight;
+    bool facingRight;
+    std::chrono::steady_clock::time_point chargeStart;
+    float chargeTime;
+    bool hasHitThisAttack;
+    CharacterState currentState;
+    CharacterState previousState;
+    float animationTimer;
+    bool walkFrame;
+
+    //health, attack, defense
     int health;
     bool isAttackingBool;
     AttackType currentAttack;
@@ -29,47 +94,22 @@ private:
     float blockFrontDamageReduction;
     float blockBackDamageReduction;
 
-    //hitbox stuff
+    //visuals - hitboxs and sprite
     sf::RectangleShape body;
     sf::Color color;
     float originalHeight;
+    PlayerTextures characterTextures;
+    sf::Sprite* currentSprite;
 
-    //const
-    const float baseGravity = 0.03f;
-    const float baseJumpVelocity = -3.2f;
-    const float baseHorizontalJumpSpeed = 1.1f;
-    const float moveSpeed = 0.8f;
-    const float minChargeTime = 0.1f;
-    const float maxChargeTime = 3.0f;
-    const float maxChargeMultiplier = 2.5f;
-    const int baseAttackDamage = 10;
-    const float attackRange = 100.f;
-    const float highAttackHeightRatio = 2.2f;
-    const float lowAttackHeight = 100.f;
-    const float blockHeightReduction = 0.6f;
-
-    //helper func
     void updateAttackHitbox();
-
-    //sprites
-    spritePack characterWalk1, characterWalk2, characterBlock, characterJump;
-    spritePack characterHighAttackLaunch, characterHighAttackCharge; //punch
-    spritePack characterLowAttackLaunch, characterLowAttackCharge; // kick
+    void updateSprite(float frameTime);
 
 public:
-    Player(const sf::Vector2f& size, const sf::Color& color, bool startFacingRight);
-    void loadSprites(
-        const std::string& walk1Path,
-        const std::string& walk2Path,
-        const std::string& blockPath,
-        const std::string& jumpPath,
-        const std::string& highAttackLaunchPath,
-        const std::string& highAttackChargePath,
-        const std::string& lowAttackLaunchPath,
-        const std::string& lowAttackChargePath
-    );
+    Player(const sf::Vector2f& size, const sf::Color& color, bool startFacingRight, int characterChoice);
+    ~Player();
 
-    //things player can do
+
+    //controls
     void moveLeft();
     void moveRight();
     void startJumpCharge();
@@ -83,8 +123,7 @@ public:
     bool checkAttackHit(Player& opponent);
     void takeDamage(int amount);
 
-
-    //getter
+    //getters
     const sf::RectangleShape& getBody() const;
     const sf::RectangleShape& getAttackHitbox() const;
     int getHealth() const;
@@ -96,11 +135,14 @@ public:
     bool getFacingRight() const;
     float getAttackMultiplier() const;
 
-    //setter
+    //setters
     void setPosition(const sf::Vector2f& position);
+    void setIsWalking(bool t);
 
-    //helper funcs
+    //helpers
     void draw(sf::RenderWindow& window) const;
     void drawHealthBar(sf::RenderWindow& window) const;
     void drawChargeBar(sf::RenderWindow& window) const;
 };
+
+FightState runGameScene(sf::RenderWindow& window, int p1code, int p2code);
