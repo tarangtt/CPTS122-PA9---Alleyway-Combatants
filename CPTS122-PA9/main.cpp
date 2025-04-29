@@ -7,7 +7,7 @@
 
 int main(void)
 {
-    sf::RenderWindow window(sf::VideoMode({ SCREEN_WIDTH , SCREEN_HEIGHT }), "SFML works!");
+    sf::RenderWindow window(sf::VideoMode({ SCREEN_WIDTH , SCREEN_HEIGHT }), "Alleyway Combatants!");
 
     GameState current = mainmenu;
     FightState fighting = FightState::NotStarted;
