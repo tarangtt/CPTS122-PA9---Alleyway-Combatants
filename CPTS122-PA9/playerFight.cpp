@@ -23,11 +23,9 @@ FightState runGameScene(sf::RenderWindow& window, int p1code, int p2code) {
 
     auto lastTime = std::chrono::steady_clock::now();
     bool gameRunning = true;
-    FightState result = FightState::Aborted; // Default return state
+    FightState result = FightState::Aborted; // default return statement
 
-    // Main game loop
     while (gameRunning && window.isOpen()) {
-        // Event handling
         while (const std::optional event = window.pollEvent()) {
             if (event->is<sf::Event::Closed>()) {
                 window.close();
@@ -36,7 +34,7 @@ FightState runGameScene(sf::RenderWindow& window, int p1code, int p2code) {
             }
         }
 
-        // Check win conditions
+        // win conditions
         if (player1.getHealth() <= 0) {
             gameRunning = false;
             result = FightState::P2Wins;
@@ -46,7 +44,7 @@ FightState runGameScene(sf::RenderWindow& window, int p1code, int p2code) {
             result = FightState::P1Wins;
         }
 
-        // Calculate frame time
+        //frame time (needed for animations)
         auto currentTime = std::chrono::steady_clock::now();
         float frameTime = std::chrono::duration<float>(currentTime - lastTime).count();
         lastTime = currentTime;
@@ -117,11 +115,11 @@ FightState runGameScene(sf::RenderWindow& window, int p1code, int p2code) {
             player2.releaseCharge(p2Left, p2Right);
         }
 
-        // Update game state
+        // update game state
         player1.update(frameTime, groundY, MAX_JUMP_HEIGHT);
         player2.update(frameTime, groundY, MAX_JUMP_HEIGHT);
 
-        // Check attacks
+        // check attacks
         if (player1.checkAttackHit(player2)) {
             player2.takeDamage(static_cast<int>(10 * player1.getAttackMultiplier()));
         }
@@ -129,7 +127,7 @@ FightState runGameScene(sf::RenderWindow& window, int p1code, int p2code) {
             player1.takeDamage(static_cast<int>(10 * player2.getAttackMultiplier()));
         }
 
-        // Render
+        // render
         window.clear();
         window.draw(backgroundSprite);
 
