@@ -4,7 +4,7 @@
 
 Made for CPTS 122 at WSU
 
-Video Demonstration: https://youtu.be/RwFkRvkF_E4
+Video Demonstration: [https://youtu.be/RwFkRvkF_E4](https://youtu.be/ewVmercvbqg)
 
 Made by
 - Tarang Teredesai (Lab Section 4)
