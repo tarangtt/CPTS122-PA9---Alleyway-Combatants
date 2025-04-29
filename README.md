@@ -4,6 +4,8 @@
 
 Made for CPTS 122 at WSU
 
+Video Demonstration: https://youtu.be/RwFkRvkF_E4
+
 Made by
 - Tarang Teredesai (Lab Section 4)
 - John Gohol (Lab Section 1)
