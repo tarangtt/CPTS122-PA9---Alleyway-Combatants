@@ -173,6 +173,12 @@
     <Image Include="Tarang\TarangPunch2.png" />
     <Image Include="Tarang\TarangWalk1.png" />
     <Image Include="Tarang\TarangWalk2.png" />
+    <Image Include="TestJohn.jpg" />
+    <Image Include="TestMiniJohn.jpg" />
+    <Image Include="TestMiniTarang.jpg" />
+    <Image Include="TestMiniYuta.png" />
+    <Image Include="TestTarang.jpg" />
+    <Image Include="TestYuta.png" />
     <Image Include="Yuta\YutaBlock.png" />
     <Image Include="Yuta\YutaJump.png" />
     <Image Include="Yuta\YutaKick1.png" />

@@ -12,23 +12,6 @@
 //typedefs / structs
 typedef unsigned int uint;
 
-class spritePack
-{
-public:
-    string path;
-    sf::Texture texture;
-    sf::Sprite sprite;
-
-    spritePack(string filename)
-        : path(filename), texture(sf::Texture(path)), sprite(sf::Sprite(texture))
-    {}
-
-    spritePack()
-        : path(""), texture("missingTexture.png"), sprite(sf::Sprite(texture))
-    {}
-};
-
-
 //constants
 #define SCREEN_HEIGHT 720 
 #define SCREEN_WIDTH  1280
@@ -71,6 +54,41 @@ using std::vector;
 using std::string;
 using std::to_string; //for the time stuff
 
+class spritePack
+{
+public:
+    string file;
+    sf::Texture texture;
+    sf::Sprite sprite;
+
+    spritePack(string filename)
+        : file(filename), texture(sf::Texture(file)), sprite(sf::Sprite(texture))
+    {
+        sprite.setTexture(texture);
+
+    }
+
+    spritePack()
+        : file(""), texture("missingTexture.png"), sprite(sf::Sprite(texture))
+    {
+        sprite.setTexture(texture);
+    }
+
+    spritePack(sf::RenderWindow& window, const std::string& filename)
+        : file(filename), texture("missingTexture.png"), sprite(sf::Sprite(texture))
+    {
+        if (!texture.loadFromFile(file)) cerr << "Failed to load texture from: " << file << endl;
+
+        sprite.setTexture(texture);
+
+        cout << "Loaded file: " << file << endl;
+
+        window.clear();
+        window.draw(sprite);
+        window.display();
+    }
+
+};
 
 
 //text colors 
@@ -81,3 +99,4 @@ using std::to_string; //for the time stuff
 #define BLU "\033[0;34m"
 #define MAG "\033[0;35m"
 #define CYN "\033[0;36m"
+

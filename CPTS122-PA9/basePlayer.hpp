@@ -3,6 +3,7 @@
 
 class Player {
 private:
+
     //player trackin
     bool isJumping;
     bool isChargingJump;
@@ -17,6 +18,10 @@ private:
     std::chrono::steady_clock::time_point chargeStart;
     float chargeTime;
     bool hasHitThisAttack;
+    bool isWalking;
+    float walkAnimationTimer;
+    bool isFirstWalkSprite;
+    int characterChoice;
 
     //attack and health
     int health;
@@ -29,10 +34,11 @@ private:
     float blockFrontDamageReduction;
     float blockBackDamageReduction;
 
-    //hitbox stuff
+    //visuals
     sf::RectangleShape body;
     sf::Color color;
     float originalHeight;
+    sf::Sprite* currentSprite;
 
     //const
     const float baseGravity = 0.03f;
@@ -50,26 +56,18 @@ private:
 
     //helper func
     void updateAttackHitbox();
+    void updateSprite();
 
     //sprites
     spritePack characterWalk1, characterWalk2, characterBlock, characterJump;
-    spritePack characterHighAttackLaunch, characterHighAttackCharge; //punch
-    spritePack characterLowAttackLaunch, characterLowAttackCharge; // kick
+    spritePack characterHighAttackLaunch, characterHighAttackCharge;
+    spritePack characterLowAttackLaunch, characterLowAttackCharge;
+    spritePack characterCharge;
 
 public:
     Player(const sf::Vector2f& size, const sf::Color& color, bool startFacingRight);
-    void loadSprites(
-        const std::string& walk1Path,
-        const std::string& walk2Path,
-        const std::string& blockPath,
-        const std::string& jumpPath,
-        const std::string& highAttackLaunchPath,
-        const std::string& highAttackChargePath,
-        const std::string& lowAttackLaunchPath,
-        const std::string& lowAttackChargePath
-    );
 
-    //things player can do
+    void loadSprites(int characterChoice, bool isPlayer1);
     void moveLeft();
     void moveRight();
     void startJumpCharge();
@@ -78,13 +76,8 @@ public:
     void startBlock();
     void stopBlock();
     void update(float frameTime, float groundY, float maxJumpHeight);
-
-    //attack
     bool checkAttackHit(Player& opponent);
     void takeDamage(int amount);
-
-
-    //getter
     const sf::RectangleShape& getBody() const;
     const sf::RectangleShape& getAttackHitbox() const;
     int getHealth() const;
@@ -95,12 +88,13 @@ public:
     float getChargePercentage() const;
     bool getFacingRight() const;
     float getAttackMultiplier() const;
-
-    //setter
     void setPosition(const sf::Vector2f& position);
-
-    //helper funcs
+    void setColor(const sf::Color& color);
     void draw(sf::RenderWindow& window) const;
     void drawHealthBar(sf::RenderWindow& window) const;
     void drawChargeBar(sf::RenderWindow& window) const;
+    void reset();
 };
+
+void draw(sf::RenderWindow& window);
+void runFightGame(sf::RenderWindow& window, int p1Choice, int p2Choice);

@@ -2,6 +2,7 @@
 #include <SFML/Graphics.hpp>
 #include "MainMenu.hpp"
 #include "CharSelect.hpp"
+#include "basePlayer.hpp"
 
 //only works in debug mode for some reason
 
@@ -84,14 +85,23 @@ int main(void)
             break;
         case charselect:
             charSelect.renderChar(window, current);
+            if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key::Enter)) {
+                current = ingame;
+                runFightGame(window,
+                    charSelect.getP1Selection(),
+                    charSelect.getP2Selection());
+            }
             break;
-        case ingame:
-            //backgroundSprite.setTexture();
 
+        case ingame:
+
+            runFightGame(window, 1, 2); // Hardcode Yuta vs Tarang
+            current = mainmenu; // Return to menu after game ends
             break;
+
         case paused:
             //backgroundSprite.setTexture();
-            
+
 
             break;
         case gameover:

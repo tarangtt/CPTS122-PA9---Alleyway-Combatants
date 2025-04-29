@@ -109,5 +109,50 @@
     <Image Include="missingTexture.png">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="John\JohnBlock.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnJump.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnKick1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnKick2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnPunch1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnPunch2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnWalk1.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="John\JohnWalk2.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Tarang\TarangCharge.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="TestMiniJohn.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="TestJohn.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="TestYuta.png">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="TestTarang.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="TestMiniTarang.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="TestMiniYuta.png">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
